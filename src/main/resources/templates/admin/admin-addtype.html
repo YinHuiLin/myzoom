@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
-    <link rel="stylesheet" href="../static/lib/editormd/css/editormd.min.css">
-    <link rel="stylesheet" href="../static/css/me.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
     <title>博客管理</title>
 </head>
 <body>
 <!--导航-->
-<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+<nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">管理后台</h2>
@@ -151,13 +151,13 @@
 
     <br>
     <br>
-<footer class="ui inverted vertical segment m-padded-tb-massive">
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img src="../static/image/wechat.png" alt="" class="ui rounded image" style="width: 110px;height: 110px">
+                        <img src="../../static/image/wechat.png" alt="" class="ui rounded image" style="width: 110px;height: 110px">
                     </div>
                 </div>
             </div>
@@ -186,9 +186,12 @@
         <p class="m-text-thin m-text-spaced m-opacity-large">Copyright @2020-2021 Lins</p>
         </div>
 </footer>
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
-<script src="../static/lib/editormd/editormd.min.js"></script>
+<th:block th:replace="_fragments ::script">
+<!--    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>-->
+<!--    <script src="../../static/lib/editormd/editormd.min.js"></script> -->
+</th:block>
+
 <script>
     // 初始化Markdown
     var Editor;

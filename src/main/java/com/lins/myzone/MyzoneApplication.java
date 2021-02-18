@@ -1,4 +1,4 @@
-package com.lins.myzoom;
+package com.lins.myzone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
